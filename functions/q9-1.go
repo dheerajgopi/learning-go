@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 type Stack struct {
-	length int
-	data   [2]int
+	i    int
+	data [10]int
 }
 
 func main() {
@@ -13,25 +13,25 @@ func main() {
 	sp.push(2)
 	fmt.Println(sp.pop())
 	sp.pop()
-	fmt.Println(sp.length)
+	fmt.Println(sp.i)
 	fmt.Println(sp.data)
 }
 
 func (s *Stack) push(n int) {
-	if s.length >= len(s.data) {
+	if s.i >= len(s.data) {
 		return
 	} else {
-		s.data[s.length] = n
-		s.length++
+		s.data[s.i] = n
+		s.i++
 	}
 }
 
 func (s *Stack) pop() int {
-	if s.length <= 0 {
+	if s.i <= 0 {
 		fmt.Println("Stack is empty")
 		return 0
 	} else {
-		s.length--
-		return s.data[s.length]
+		s.i--
+		return s.data[s.i]
 	}
 }
