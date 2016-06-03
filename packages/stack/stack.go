@@ -3,18 +3,18 @@ package stack
 
 // Stack for storing ints
 type Stack struct {
-	i    int
-	data [10]int
+	Height int
+	Data   [10]int
 }
 
 // An int is pushed to the stack
 func (s *Stack) Push(n int) {
-	s.data[s.i] = n
-	s.i++
+	s.Data[s.Height] = n
+	s.Height++
 }
 
 // An int is popped from the stack and the popped int is returned
 func (s *Stack) Pop() int {
-	s.i--
-	return s.data[s.i]
+	s.Height--
+	return s.Data[s.Height]
 }
