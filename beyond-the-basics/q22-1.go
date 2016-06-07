@@ -18,6 +18,7 @@ func main() {
 	content, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println("File is corrupted or does not exist")
+		return
 	}
 
 	fmt.Printf("%s", string(content))
